@@ -1,23 +1,33 @@
 # macOS-command-line
 
-
 ## System
 
-### package manager
+### Package Manager
 
 * [Homebrew](https://brew.sh/)
 
-### power
+### Power
 
 * _pmset_
 ```
 	pmset sleepnow
 ``` 
 
-### file system
+### Network
+
+* [networksetup](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man8/networksetup.8.html) configuration tool for network settings in System Preferences.
+
+### File System
 
 * _mdfind_
-
+* [find](skills/find.md)
+* _mount_
+```
+	# mount smbfs as a local volume.
+	sudo mkdir /Volumes/Public
+	sudo chown $(whoami) /Volumes/Public
+	mount_smbfs smb://username@192.168.1.2/Public /Volumes/Public
+```
 
 ## Image
 
@@ -36,6 +46,12 @@
 
 * [pandoc](http://pandoc.org/) Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX, MediaWiki markup, TWiki markup, OPML, Emacs Org-Mode, Txt2Tags, Microsoft Word docx, LibreOffice ODT, EPUB, or Haddock markup
 
+### plain text
+* [ack](https://beyondgrep.com/) Designed for programmers with large heterogeneous trees of source code.
+* [sed](skills/sed.md) 
+* [perl](skills/perl.md)
+* [awk](skills/awk.md)
+
 ### json
 
 * [jq](https://stedolan.github.io/jq/)
@@ -52,6 +68,6 @@
 
 ## Network
 
-* [you-get](https://github.com/soimort/you-get) You-Get is a tiny command-line utility to download media contents (videos, audios, images) from the Web, in case there is no other handy way to do it.
- 
-
+* [you-get](https://github.com/soimort/you-get) is a tiny command-line utility to download media contents (videos, audios, images) from the Web, in case there is no other handy way to do it.
+* [netcat](http://man.openbsd.org/OpenBSD-current/man1/nc.1) The nc (or netcat) utility is used for just about anything under the sun involving TCP, UDP, or UNIX-domain sockets. It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6. Unlike telnet(1), nc scripts nicely, and separates error messages onto standard error instead of sending them to standard output, as telnet(1) does with some.
+* [socat](http://www.dest-unreach.org/socat/) is a relay for bidirectional data transfer between two independent data channels. Each of these data channels may be a file, pipe, device (serial line etc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw, UDP, TCP), an SSL socket, proxy CONNECT connection, a file descriptor (stdin etc.), the GNU line editor (readline), a program, or a combination of two of these.  These modes include generation of "listening" sockets, named pipes, and pseudo terminals.
